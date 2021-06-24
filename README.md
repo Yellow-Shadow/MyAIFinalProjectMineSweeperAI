@@ -1,4 +1,4 @@
-# MineSweeperAI
+# 1092 Artificial Intelligence Final Project MineSweeperAI
 Test website: https://nick0603.github.io/MineSweeperAI/
 
 ## Test video
