@@ -183,6 +183,26 @@ div#success-modal > .wrapper > button#resume-btn:hover {
   color: #333;
   transition: .25s;
 }
+div#failure-modal > .wrapper {
+  margin-top: -75px;
+  height: 150px;
+}
+div#failure-modal > .wrapper > button#restart-btn {
+  background-color: #333;
+  color: #eee;
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  transition: .25s;
+}
+div#failure-modal > .wrapper > button#restart-btn:hover {
+  background-color: #eee;
+  color: #333;
+  transition: .25s;
+}
 div#new-game-modal > .wrapper {
   margin-top: -175px;
   height: 350px;

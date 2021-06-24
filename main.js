@@ -15,8 +15,11 @@ var $game = {
   stopAutoPlayGameBtn:null,
   startGameBtn: null,
   successModal: null,
+  failureModal: null,
   resumeBtn: null,
+  restartBtn: null,
   resultTime: null,
+  resultTimeF: null,
   timeCount: 0,
   timeCounterId: undefined,
   inputs: null,
@@ -167,8 +170,11 @@ function initGameElements() {
   $game.stopAutoPlayGameBtn = document.getElementById('stop-auto-play');
   $game.startGameBtn = document.getElementById('start-game');
   $game.successModal = document.getElementById('success-modal');
+  $game.failureModal = document.getElementById('failure-modal');
   $game.resumeBtn    = document.getElementById('resume-btn');
+  $game.restartBtn   = document.getElementById('restart-btn');
   $game.resultTime   = document.getElementById('result-time');
+  $game.resultTimeF  = document.getElementById('result-time-f');
   $game.statistic = {
     element:     document.getElementById('statistic'),
     flags:       document.getElementById('flags-count'),
@@ -211,7 +217,7 @@ function initControlSystem() {
         unit.addClass('hintSafe')
       }
     }else{
-      alert("can't find any Hint! ")
+      alert("Can't Find Any Hint Position! ")
     }
   });
   
@@ -257,6 +263,11 @@ function initControlSystem() {
 
   $game.resumeBtn.addEventListener('click', function() {
     $game.successModal.style.display = 'none';
+  });
+
+  $game.restartBtn.addEventListener('click', function() {
+    $game.failureModal.style.display = 'none';
+    //setGame();
   });
 }
 
@@ -382,8 +393,10 @@ function gameSuccess() {
 function gameOver() {
   $game.stopTimeCounter();
   $mineSweeperAI.stop();
+  $game.resultTimeF.innerHTML = $game.currentTimeString();
   $game.autoPlayGameBtn.style.display = "inline-block";
   $game.stopAutoPlayGameBtn.style.display = "none";
+  $game.failureModal.style.display = 'block';
   loopThroughGrid(function(row, col) {
     var unit = $grid.getUnit(row, col);
     var data = $grid.getUnitData(row, col);
