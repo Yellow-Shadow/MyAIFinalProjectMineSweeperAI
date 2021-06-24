@@ -1,8 +1,7 @@
 # 1092 Artificial Intelligence Final Project MineSweeperAI
-Test website: https://nick0603.github.io/MineSweeperAI/
+Test website: https://yellow-shadow.github.io/MyAIFinalProjectMineSweeperAI/
 
 ## Test video
-[![mineSweeperAI](images/screenShot1.PNG)](https://www.youtube.com/watch?v=HC2h-0ejAF4)
 
 ## Discuss Strategy
 1. find absoluty mine or secure position
